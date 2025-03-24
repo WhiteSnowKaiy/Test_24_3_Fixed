@@ -1,24 +1,41 @@
 package org.example.tst24_3;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-
-import java.io.IOException;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.TextField;
+import java.time.LocalDate;
 
 public class AddEditEmployeeController {
     @FXML
-    protected void openNewWindow() throws IOException {
-        FXMLLoader root = FXMLLoader.load(getClass().getResource("AddNewEmployee.fxml"));
-        VBox form = root.load();
+    private TextField name;
+    @FXML
+    private DatePicker dateOfJoiningCompany;
+    @FXML
+    private Spinner<Double> workPlan;
+    @FXML
+    private TextField level;
 
-        AddEditEmployeeController controller = root.getController();
-
-        Stage stage = new Stage();
-        stage.setTitle("Add/edit Employee");
-        stage.setScene(new Scene(form));
-        stage.showAndWait();
+    @FXML
+    private void initialize() {
+        SpinnerValueFactory<Double> valueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 100, 1);
+        workPlan.setValueFactory(valueFactory);
     }
+
+    public Employee getEmployee() {
+        if (name == null || dateOfJoiningCompany == null || workPlan == null || level == null) {
+            return null;
+        }
+
+        return new Employee(
+                name.getText(),
+                dateOfJoiningCompany.toString(),
+                Float.parseFloat(
+                        workPlan.getValue().toString()
+                ),
+                level.toString()
+        );
+    }
+
 }

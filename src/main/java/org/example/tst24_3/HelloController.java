@@ -1,15 +1,15 @@
 package org.example.tst24_3;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -60,6 +60,8 @@ public class HelloController {
                                 "\núroveň: " + e.level
                 );
             }
+        } else {
+            System.out.println("Value is null, or no employee selected");
         }
     }
     @FXML
@@ -70,4 +72,39 @@ public class HelloController {
         }
     }
 
+    @FXML
+    public void createEmployee() throws IOException {
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("AddNewEmployee.fxml"));
+
+        HBox form = loader.load();
+        AddEditEmployeeController controller = loader.getController();
+        Stage dialogStage = new Stage();
+        dialogStage.setTitle("Create employee");
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
+        assert form != null;
+        dialogStage.setScene(new Scene(form));
+        dialogStage.showAndWait();
+        Employee newEmployee = controller.getEmployee();
+        if (newEmployee != null) {
+            employeeListView.getItems().add(newEmployee);
+        }
+    }
+
+    @FXML
+    public void editEmployee() throws IOException {
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("AddNewEmployee.fxml"));
+
+        HBox form = loader.load();
+        AddEditEmployeeController controller = loader.getController();
+        Stage dialogStage = new Stage();
+        dialogStage.setTitle("Edit employee");
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
+        assert form != null;
+        dialogStage.setScene(new Scene(form));
+        dialogStage.showAndWait();
+        Employee newEmployee = controller.getEmployee();
+        if (newEmployee != null) {
+            employeeListView.getItems().add(newEmployee);
+        }
+    }
 }

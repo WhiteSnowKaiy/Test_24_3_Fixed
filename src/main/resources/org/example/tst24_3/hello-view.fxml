@@ -18,8 +18,8 @@
                      <children>
                         <Label fx:id="infoLabel" prefHeight="327.0" prefWidth="198.0" />
                         <Button mnemonicParsing="false" onAction="#removeEmployee" prefHeight="25.0" prefWidth="204.0" text="Smazat zaměstnance" />
-                        <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="211.0" text="Pridat zaměstnance" />
-                        <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="210.0" text="Upravit zaměstnance" />
+                        <Button mnemonicParsing="false" onAction="#createEmployee" prefHeight="24.0" prefWidth="211.0" text="Pridat zaměstnance" />
+                        <Button mnemonicParsing="false" onAction="#editEmployee" prefHeight="24.0" prefWidth="210.0" text="Upravit zaměstnance" />
                      </children>
                   </VBox>
                </children>
