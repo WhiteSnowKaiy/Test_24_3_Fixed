@@ -33,12 +33,33 @@ public class HelloController {
         // ziskani aktualne oznaceneho uzivatele
         Employee e = employeeListView.getSelectionModel().getSelectedItem();
         if (e != null) {
-            infoLabel.setText(
-                    "Jmeno: " + e.name +
-                    "\nDatum nástupu: " + e.dateOfJoiningCompany +
-                    "\núvazek: " + e.workPlan +
-                    "\núroveň: " + e.level
-            );
+            if (e.level.equals("Senior")) {
+                infoLabel.getStyleClass().set(0, "Senior");
+                infoLabel.setText(
+                        "Jmeno: " + e.name +
+                                "\nDatum nástupu: " + e.dateOfJoiningCompany +
+                                "\núvazek: " + e.workPlan +
+                                "\núroveň: " + e.level
+                );
+            }
+            if (e.level.equals("Medior")) {
+                infoLabel.getStyleClass().set(0, "Medior");
+                infoLabel.setText(
+                        "Jmeno: " + e.name +
+                                "\nDatum nástupu: " + e.dateOfJoiningCompany +
+                                "\núvazek: " + e.workPlan +
+                                "\núroveň: " + e.level
+                );
+            }
+            if (e.level.equals("Junior")) {
+                infoLabel.getStyleClass().set(0, "Junior");
+                infoLabel.setText(
+                        "Jmeno: " + e.name +
+                                "\nDatum nástupu: " + e.dateOfJoiningCompany +
+                                "\núvazek: " + e.workPlan +
+                                "\núroveň: " + e.level
+                );
+            }
         }
     }
     @FXML
