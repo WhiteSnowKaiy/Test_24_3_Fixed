@@ -9,17 +9,28 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
-      <HBox prefHeight="214.0" prefWidth="368.0">
-         <children>
-            <ListView fx:id="employeeListView" onMouseClicked="#onSelectedEmployee" prefHeight="244.0" prefWidth="359.0" />
-            <VBox prefHeight="214.0" prefWidth="199.0">
+      <BorderPane prefHeight="478.0" prefWidth="556.0">
+         <center>
+            <HBox prefHeight="422.0" prefWidth="556.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="infoLabel" prefHeight="165.0" prefWidth="198.0" text="Label" />
-                  <Button mnemonicParsing="false" onAction="#removeEmployee" prefHeight="25.0" prefWidth="204.0" text="Smazat zamestnance" />
-                  <Button mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="24.0" prefWidth="198.0" text="Pridat zamestnance" />
+                  <ListView fx:id="employeeListView" onMouseClicked="#onSelectedEmployee" prefHeight="390.0" prefWidth="358.0" />
+                  <VBox prefHeight="214.0" prefWidth="199.0">
+                     <children>
+                        <Label fx:id="infoLabel" prefHeight="327.0" prefWidth="198.0" />
+                        <Button mnemonicParsing="false" onAction="#removeEmployee" prefHeight="25.0" prefWidth="204.0" text="Smazat zaměstnance" />
+                        <Button mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="24.0" prefWidth="211.0" text="Pridat zaměstnance" />
+                        <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="210.0" text="Upravit zaměstnance" />
+                     </children>
+                  </VBox>
                </children>
-            </VBox>
-         </children>
-      </HBox>
+            </HBox>
+         </center>
+         <top>
+            <Label prefHeight="25.0" prefWidth="128.0" text="Zaměstnanci firmy:" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <Label prefHeight="23.0" prefWidth="248.0" text="Copyright - Jára co. all rights reserved" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
    </children>
 </VBox>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.tst24_3.AddEditEmployeeController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="155.0">
+         <children>
+            <Label prefHeight="30.0" prefWidth="134.0" text="Jméno:" />
+            <Label prefHeight="30.0" prefWidth="131.0" text="Uroven:" />
+            <Label prefHeight="35.0" prefWidth="136.0" text="Uvazek:" />
+            <Label prefHeight="34.0" prefWidth="130.0" text="Datum nastupu:" />
+         </children></VBox>
+      <VBox prefHeight="400.0" prefWidth="401.0" style="-fx-padding: 10px;">
+         <children>
+            <TextField prefHeight="31.0" prefWidth="374.0" />
+            <HBox prefHeight="21.0" prefWidth="374.0" style="-fx-padding: 5px;">
+               <children>
+                  <RadioButton mnemonicParsing="false" prefHeight="18.0" prefWidth="134.0" text="RadioButton" />
+                  <RadioButton mnemonicParsing="false" prefHeight="18.0" prefWidth="140.0" text="RadioButton" />
+                  <RadioButton mnemonicParsing="false" prefHeight="18.0" prefWidth="135.0" text="RadioButton" />
+               </children>
+            </HBox>
+            <Spinner prefHeight="24.0" prefWidth="373.0" />
+            <DatePicker prefHeight="26.0" prefWidth="361.0" style="-fx-padding: 5px;" />
+         </children></VBox>
+      <VBox prefHeight="400.0" prefWidth="126.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="106.0" text="Hotovo" />
+         </children>
+      </VBox>
+   </children>
+</HBox>

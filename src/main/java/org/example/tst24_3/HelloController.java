@@ -49,16 +49,4 @@ public class HelloController {
         }
     }
 
-    @FXML
-    protected void openNewWindow() throws IOException {
-        FXMLLoader root = FXMLLoader.load(getClass().getResource("AddNewEmployee.fxml"));
-        VBox form = root.load();
-
-        AddEditEmployeeController controller = root.getController();
-
-        Stage stage = new Stage();
-        stage.setTitle("Add/edit Employee");
-        stage.setScene(new Scene(form));
-        stage.showAndWait();
-    }
 }
