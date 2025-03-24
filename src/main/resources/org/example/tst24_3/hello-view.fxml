@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.tst24_3.HelloController">
+<VBox alignment="CENTER" prefHeight="488.0" prefWidth="596.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.tst24_3.HelloController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+   <children>
+      <HBox prefHeight="214.0" prefWidth="368.0">
+         <children>
+            <ListView fx:id="employeeListView" onMouseClicked="#onSelectedEmployee" prefHeight="244.0" prefWidth="359.0" />
+            <VBox prefHeight="214.0" prefWidth="199.0">
+               <children>
+                  <Label fx:id="infoLabel" prefHeight="165.0" prefWidth="198.0" text="Label" />
+                  <Button mnemonicParsing="false" onAction="#removeEmployee" prefHeight="25.0" prefWidth="204.0" text="Smazat zamestnance" />
+                  <Button mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="24.0" prefWidth="198.0" text="Pridat zamestnance" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
 </VBox>
